@@ -10,5 +10,4 @@ public class main01 {
 		// Object의 toString()을 호출한다.
 		System.out.println(str);
 	}
-	
 }
