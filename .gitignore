@@ -5,5 +5,5 @@
 *.class
 .metadata/
 .recommenders/
-RemoteSystemTempFiles/
+RemoteSystemsTempFiles/
 
