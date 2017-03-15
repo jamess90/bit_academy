@@ -9,10 +9,9 @@ public class personMain {
 
 	public static void main(String[] args) {
 
-		person p1 = new person(new head_yellowHairBand(), new body_whiteY_Shirt(), new hand_gun(), new leg_shortPants());
+		person p1 = new person(new head_HairBand("³ë¶û»ö", "³ªÀÌÅ°"), new body_Y_Shirt("Èò»ö", "ÆÄÅ©·£µå"), new hand_gun("ÁÖÈ²»ö","±Û·Ï"), new leg_shortPants("»¡°­»ö","¹ğ¹ğ"));
 		System.out.println();
-		person p2 = new person(new head_greenHat(), new body_grayT_Shirt(), new hand_sword(), new leg_redSkirt());
-
+	
 	}
 
 }

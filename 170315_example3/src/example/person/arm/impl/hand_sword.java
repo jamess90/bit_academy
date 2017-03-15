@@ -1,17 +1,23 @@
 package example.person.arm.impl;
 
+import example.person.productInfo;
 import example.person.arm.IHand;
 
-public class hand_sword implements IHand{
+public class hand_sword extends productInfo implements IHand{
+	
+	public hand_sword(String color, String brand) {
+		this.color = color;
+		this.brand = brand;
+	}
 	
 	@Override
 	public void showInfo() {
-		System.out.println("브랜드 : (주)나카무라");		
+		System.out.println("색상 : " + this.color);
+		System.out.println("브랜드 : " + this.brand);
 	}
-	
 	
 	@Override
 	public String toString() {
-		return "칼";
+		return color + "칼";
 	}
 }

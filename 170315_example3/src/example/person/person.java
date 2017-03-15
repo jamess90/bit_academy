@@ -5,7 +5,7 @@ import example.person.arm.impl.hand_gun;
 import example.person.body.IBody;
 import example.person.body.impl.body_onePiece;
 import example.person.head.IHead;
-import example.person.head.impl.head_blackHair;
+import example.person.head.impl.head_Hair;
 import example.person.leg.ILeg;
 import example.person.leg.impl.leg_shortPants;
 

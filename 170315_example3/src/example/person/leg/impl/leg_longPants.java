@@ -3,9 +3,9 @@ package example.person.leg.impl;
 import example.person.productInfo;
 import example.person.leg.ILeg;
 
-public class leg_shortPants extends productInfo implements ILeg{
-	
-	public leg_shortPants(String color, String brand) {
+public class leg_longPants extends productInfo implements ILeg{
+
+	public leg_longPants(String color, String brand) {
 		this.color = color;
 		this.brand = brand;
 	}
@@ -18,6 +18,6 @@ public class leg_shortPants extends productInfo implements ILeg{
 	
 	@Override
 	public String toString() {
-		return color + "ÇÖÆÒÃ÷";
+		return color + "±ä ¹ÙÁö";
 	}
 }

@@ -1,11 +1,11 @@
-package example.person.leg.impl;
+package example.person.body.impl;
 
 import example.person.productInfo;
-import example.person.leg.ILeg;
+import example.person.body.IBody;
 
-public class leg_shortPants extends productInfo implements ILeg{
-	
-	public leg_shortPants(String color, String brand) {
+public class body_Y_Shirt extends productInfo implements IBody{
+
+	public body_Y_Shirt(String color, String brand) {
 		this.color = color;
 		this.brand = brand;
 	}
@@ -18,6 +18,6 @@ public class leg_shortPants extends productInfo implements ILeg{
 	
 	@Override
 	public String toString() {
-		return color + "ÇÖÆÒÃ÷";
+		return color + "¿ÍÀÌ¼ÅÃ÷";
 	}
 }
