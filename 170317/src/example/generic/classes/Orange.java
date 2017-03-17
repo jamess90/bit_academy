@@ -1,8 +1,8 @@
-package example.generic.classes.generic;
+package example.generic.classes;
 
-public class Orenge extends Fruit {
+public class Orange extends Fruit {
 
-	public Orenge() {
+	public Orange() {
 		super(15, "orenge");
 	}
 
@@ -10,7 +10,7 @@ public class Orenge extends Fruit {
 	public String toString() {
 		return "Orenge";
 	}
-
+	
 	public void goo() {
 		System.out.println("Orenge.goo()");
 	}

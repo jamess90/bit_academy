@@ -7,12 +7,12 @@ public class main02 {
 	public static void main(String[] args) {
 
 		FruitBox<Apple> applebox = new FruitBox<>();
-		FruitBox<Orenge> orengebox = new FruitBox<>();
+		FruitBox<Orange> orengebox = new FruitBox<>();
 
 		applebox.putFruit(new Apple());
-		orengebox.putFruit(new Orenge());
+		orengebox.putFruit(new Orange());
 
-		Orenge orenge = (Orenge) orengebox.getFruit();
+		Orange orenge = (Orange) orengebox.getFruit();
 
 	}
 

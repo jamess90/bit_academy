@@ -1,8 +1,8 @@
-package example.generic.classes;
+package example.generic.classes.generic;
 
-public class Orenge extends Fruit {
+public class Orange extends Fruit {
 
-	public Orenge() {
+	public Orange() {
 		super(15, "orenge");
 	}
 

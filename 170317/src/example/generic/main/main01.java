@@ -2,7 +2,7 @@ package example.generic.main;
 
 import example.generic.classes.Apple;
 import example.generic.classes.FruitBox;
-import example.generic.classes.Orenge;
+import example.generic.classes.Orange;
 
 public class main01 {
 
@@ -17,8 +17,8 @@ public class main01 {
 
 		System.out.println("get : " + apple);
 
-		fruitBox.putFruit(new Orenge());
-		Orenge orenge = (Orenge) fruitBox.getFruit();
+		fruitBox.putFruit(new Orange());
+		Orange orenge = (Orange) fruitBox.getFruit();
 
 		orenge.goo();
 
