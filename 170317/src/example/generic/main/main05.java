@@ -17,6 +17,4 @@ public class main05 {
 		System.out.println(appleList);
 	}
 	
-	
-	
 }

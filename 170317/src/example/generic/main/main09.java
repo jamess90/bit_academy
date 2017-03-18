@@ -6,6 +6,11 @@ public class main09 {
 
 	public static void main(String[] args) {
 		
+		
+		 String path = main09.class.getResource("").getPath();
+		 System.out.println(path);
+		 
+		 
 		TreeSet<Person> treeSet = new TreeSet<>();
 		treeSet.add(new Person("A", 10));
 		treeSet.add(new Person("D", 13));
@@ -13,9 +18,7 @@ public class main09 {
 		treeSet.add(new Person("C", 11));
 		
 		System.out.println(treeSet);
-	
 	}
-	
 }
 
 class Person implements Comparable<Person>{
