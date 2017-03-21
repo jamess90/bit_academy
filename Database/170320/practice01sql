@@ -1,0 +1,74 @@
+--1) 사원(emp) 테이블에서 사번, 이름, 급여, 연봉(급여 x 12)을 구하시오
+ SELECT EMPNO, ENAME, SAL, SAL * 12 FROM EMP;	
+ 
+ SELECT * FROM EMP;	
+
+ SELECT NVL(COMM, 0) FROM EMP ;	
+
+--2) 사번, 이름, 매니져 코드를 출력 할 때, MGR -> MANAGER로 변경 할 것
+--   EMPNO  ENAME  MANAGER
+   ---------------------
+ SELECT EMPNO, ENAME, MGR AS MANAGER FROM EMP;    --(권장)
+ SELECT EMPNO, ENAME, MGR AS "MANAGER" FROM EMP;  --(권장 - (띄어쓰기 가능))
+
+ SELECT EMPNO, ENAME, MGR MANAGER FROM EMP;       --(권장하지 않음)
+ SELECT EMPNO, ENAME, MGR "MANAGER" FROM EMP;     --(권장하지 않음)(띄어쓰기 가능)
+   
+ --띄어쓰기는 되도록이면 사용하지 않는 것이 좋다.
+ --되도록이면 AS를 사용하자
+
+
+--3) 사번, 이름, 고용일을 한글로 표현
+--  EMPNO, ENAME, HIREDATE
+--------------------------
+--사원번호, 사원이름, 고용일
+---------------------------
+
+  SELECT EMPNO AS "사원번호", ENAME AS "사원이름", HIREDATE AS "고용일" FROM EMP;
+
+
+--4) 매니져 코드만 중복되지 않게 출력 하시오
+	  SELECT DISTINCT MGR FROM EMP;
+
+  --DISTINCT가 있으면 중복 허용 x
+  --DISTINCT가 없으면 중복 허용 O
+
+   --* WHERE 절 : 테이블에 특정 조건을 설정하는 절
+
+--5) 매니져 코드가 7839인 사람들에 대한 사원번호, 이름, 급여를 출력하시오
+ SELECT EMPNO, ENAME, SAL FROM EMP WHERE MGR = 7839;
+
+--6) 급여가 1000 이상인 사람들에 대한 이름, 연봉(YEAR_SAL)을 출력하시오
+ SELECT ENAME, SAL *12 AS YEAR_SAL FROM EMP WHERE SAL >= 1000;
+
+--7) 부서번호가 10이 아닌 사람들의 사번, 이름, 급여를 출력하시오
+ SELECT EMPNO, ENAME, SAL FROM EMP WHERE DEPTNO <> 10;
+--			    		 DEPTNO != 10;
+--                DEPTNO ^= 10;
+
+
+--8) 직업이 MANAGER이고, 급여가 2500이상인 사람에 대한 전체 정보를 출력
+ SELECT * FROM EMP WHERE JOB = 'MANAGER' AND SAL >= 2500;
+
+--9) 매니져 코드가 7698이고 직업은 SALESMAN이면서 부서번호가 30인 사람에 대한 정보를 출력하시오
+ SELECT * FROM EMP WHERE MGR = 7698 AND JOB = 'SALESMAN' AND DEPTNO = 30;
+
+--10) 이름에 A가 들어가고 직업 이름이 N으로 끝나는 사람들에 대한 정보를 출력하시오
+ SELECT * FROM EMP WHERE ENAME LIKE '%A%' AND JOB LIKE '%N';
+
+--11) 이름에 R이 들어가고 직업이 S로 시작해서 N으로 끝나는 사람들에 대한 정보를 출력하시오
+ SELECT * FROM EMP WHERE ENAME LIKE '%R%' AND JOB LIKE 'S%N';
+
+
+
+
+
+
+
+
+
+
+
+
+
+

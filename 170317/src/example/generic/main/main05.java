@@ -1,4 +1,5 @@
 package example.generic.main;
+
 import java.util.ArrayList;
 
 import example.generic.classes.Apple;
