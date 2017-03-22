@@ -1,0 +1,110 @@
+-- 집계 함수의 GROUP BY
+--> ~별 (ex : 부서별 : GROUP BY DEPTNO)
+
+SELECT * FROM EMP;
+SELECT SUM(SAL) FROM EMP;
+
+SELECT DEPTNO, SUM(SAL) FROM EMP GROUP BY DEPTNO;
+
+--avg : 평균값 구하기
+SELECT ROUND(AVG(SAL)) FROM EMP;
+
+
+--MGR 코드별 급여의 평균 구하기
+SELECT  MGR, ROUND(AVG(SAL)) FROM EMP GROUP BY MGR;
+
+SELECT * FROM EMP;
+
+-- 1)부서 마다 직업별 급여의 총 합계와 평균을 구하시오
+SELECT JOB, SUM(SAL), ROUND(AVG(SAL)) FROM EMP GROUP BY DEPTNO,JOB ORDER BY DEPTNO;
+
+-- MAX : 최대값,  MIN : 최소값
+
+SELECT MAX(SAL), MIN(SAL) FROM EMP;
+
+-- COUNT : 갯수
+SELECT COUNT(*) FROM EMP;
+
+SELECT * FROM EMP;
+
+SELECT COUNT(*), DEPTNO FROM  EMP GROUP BY DEPTNO;
+
+-- 1) 부서마다 직업별 급여의 총 합계와 평균을 구하시오
+SELECT DEPTNO, JOB, SUM(SAL), ROUND(AVG(SAL)) FROM EMP GROUP BY DEPTNO, JOB ORDER BY DEPTNO;
+
+-- 2) 매니저별 부하직원의 인원 수 
+SELECT MGR, COUNT(*) FROM EMP GROUP BY MGR;
+
+
+-- 3) 부서별 인원수가 4명 이상인 부서의 부서번호와 인원수를 출력
+SELECT COUNT(*), DEPTNO
+FROM EMP
+GROUP BY DEPTNO, SAL
+HAVING SAL >= 2000;
+
+SELECT COUNT(*), DEPTNO
+FROM EMP
+WHERE SAL >= 2000
+GROUP BY DEPTNO
+HAVING COUNT(*) >= 2
+ORDER BY DEPTNO;
+
+SELECT * FROM EMP;
+
+-- 4) 부서별 급여이 1000이상 3000이하인 사람들이 2명 이상인 부서번호, 급여 평균을 구하시오
+SELECT DEPTNO, AVG(SAL)
+FROM EMP 
+WHERE SAL >= 1000 AND SAL <= 3000 
+--WHERE SAL BETWEEN 1000 AND 3000
+GROUP BY DEPTNO
+HAVING COUNT(*) >=2 
+ORDER BY DEPTNO;
+
+-- 5) 부서마다 직업이 CLERK인 사람들의 급여 평균을 구하시오.
+SELECT DEPTNO, AVG(SAL)
+FROM EMP
+WHERE JOB = 'CLERK'
+GROUP BY DEPTNO
+ORDER BY DEPTNO;
+
+-- 6) 매니져마다 CLERK의 인원 수를 구하시오.
+SELECT MGR, COUNT(*)
+FROM EMP
+WHERE JOB = 'CLERK'
+GROUP BY MGR;
+
+
+
+-- 7) 직업별로 월급이 제일 많은 사람과 제일 적은 사람의 차액을 구하시오
+SELECT JOB, MAX(SAL) - MIN(SAL)
+FROM EMP
+GROUP BY JOB;
+
+SELECT * FROM EMP;
+
+-- 8) 커미션이 없는 사람 중에 각 부서별로 월급이 제일 많은 사람을 구하시오
+SELECT DEPTNO, MAX(SAL) 
+FROM EMP
+WHERE COMM IS NULL
+GROUP BY DEPTNO
+ORDER BY DEPTNO;
+
+
+-- 9) 직업의 이름이 s로 시작하지 않는 직업들의 급여의 합계가 3000 이상인 직업의 이름과 급여의 합을 구하시오(급여 합계 오름차순 정렬)
+SELECT JOB, SUM(SAL)
+FROM EMP
+WHERE JOB NOT LIKE 'S%' 
+GROUP BY JOB
+HAVING SUM(SAL) >= 3000
+ORDER BY SUM(SAL);
+
+SELECT * FROM EMP;
+
+
+-- 10) 월급이 제일 많은 사람과 제일 적은 사람의 차액이 2000이상인 부서의 부서번호와 차액을 구하시오
+
+SELECT DEPTNO, MAX(SAL) - MIN(SAL)
+FROM EMP
+GROUP BY DEPTNO
+HAVING (MAX(SAL) - MIN(SAL)) >= 2000
+ORDER BY DEPTNO;
